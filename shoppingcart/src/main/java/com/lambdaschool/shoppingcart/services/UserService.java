@@ -16,6 +16,10 @@ public interface UserService
      */
     List<User> findAll();
 
+    User findByName(String name);
+
+    List<User> findByNameContaining(String username);
+
     /**
      * Returns the user with the given primary key.
      *
@@ -40,4 +44,16 @@ public interface UserService
      * @return the saved user object including any automatically generated fields
      */
     User save(User user);
+
+    User update(
+            User user,
+            long id);
+
+    void addUserRole(
+            long userid,
+            long roleid);
+
+    void deleteUserRole(
+            long userid,
+            long roleid);
 }
